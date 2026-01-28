@@ -205,14 +205,14 @@ export const Landing: React.FC = () => {
               Premium visual production for startups, corporate brands, and marketing teams worldwide.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-20">
+          <div className="gap-30">
             <div className="space-y-4">
               <h5 className="text-[10px] uppercase tracking-widest text-zinc-400">Contact</h5>
-              <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">Email</a>
-              <div className="text-sm text-zinc-500">Location Hyderabad / Delhi /Remote</div>
+              <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">manager.remapstudio@gmail.com</a>
+              <div className="text-sm text-zinc-500">Hyderabad / Delhi / Remote</div>
             </div>
             <div className="space-y-4">
-              <h5 className="text-[10px] uppercase tracking-widest text-zinc-400">Social</h5>
+              <h5 className="text-[10px] uppercase tracking-widest pt-6 text-zinc-400">Social</h5>
               <div className="flex flex-col gap-2 text-sm text-zinc-500">
                 <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://www.linkedin.com/company/remapstudio/" className="hover:text-white transition-colors">LinkedIn</a>
