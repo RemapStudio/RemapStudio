@@ -175,20 +175,20 @@ export const Contactus = () => {
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </div> 
 
                     {/* Right Column: Direct Contact Info */}
                     <div className="lg:col-span-5 space-y-12 lg:pl-12">
                         <div>
                             <h3 className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-6">Reach out directly</h3>
                             <div className="space-y-6">
-                                <a href="mailto:hello@remapstudio.in" className="flex items-center gap-4 group">
+                                <a href="mailto:manager.remapstudio@gmail.com" className="flex items-center gap-4 group">
                                     <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-full group-hover:border-zinc-500 transition-colors">
                                         <Mail size={20} className="text-zinc-400" />
                                     </div>
                                     <span className="text-lg hover:text-zinc-400 transition-colors">manager.remapstudio@gmail.com</span>
                                 </a>
-                                <a href="tel:+919800000000" className="flex items-center gap-4 group">
+                                <a href="tel:+916397607997" className="flex items-center gap-4 group">
                                     <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-full group-hover:border-zinc-500 transition-colors">
                                         <Phone size={20} className="text-zinc-400" />
                                     </div>

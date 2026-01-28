@@ -208,7 +208,7 @@ export const Landing: React.FC = () => {
           <div className="grid grid-cols-2 gap-20">
             <div className="space-y-4">
               <h5 className="text-[10px] uppercase tracking-widest text-zinc-400">Contact</h5>
-              <div className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">manager.remapstudio@gmail.com</div>
+              <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">Email</a>
               <div className="text-sm text-zinc-500">Location Hyderabad / Delhi /Remote</div>
             </div>
             <div className="space-y-4">
