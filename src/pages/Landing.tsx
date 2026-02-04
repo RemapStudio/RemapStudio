@@ -80,7 +80,7 @@ export const Landing: React.FC = () => {
   return (
     <div className="bg-black text-white selection:bg-white selection:text-black font-sans antialiased">
       <Navbar />
-      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-6 overflow-hidden bg-black pt-25 md:pt-24">
+      <section className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-6 overflow-hidden bg-black pt-25 md:pt-24">
         <div className="absolute inset-0 z-0">
           <ConstellationBackground />
         </div>
@@ -196,10 +196,10 @@ export const Landing: React.FC = () => {
             <div className="space-y-4">
               <h5 className="text-[10px] uppercase tracking-widest text-zinc-500 md:pt-0">Social</h5>
               <div className="flex gap-6 text-zinc-500">
-                <a href="#" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Instagram size={22} strokeWidth={1.5} />
                 </a>
-                <a href="#" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                <a href="https://www.linkedin.com/company/remapstudio/" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Linkedin size={22} strokeWidth={1.5} />
                 </a>
               </div>

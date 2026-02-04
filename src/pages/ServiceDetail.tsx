@@ -1,16 +1,25 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, CheckCircle2, Play } from 'lucide-react';
+import { ArrowLeft, Camera, CheckCircle2, ExternalLink, Play } from 'lucide-react';
 import CorporateImg from '../assets/CorporateImg.avif';
 import ProductImg from '../assets/ProductImg.avif';
 import EventImg from '../assets/EventImg.avif';
 import RealEstateImg from '../assets/RealEstateImg.avif';
 import InterviewsImg from '../assets/InterviewsImg.avif';
 import imgurl from '../assets/imgurl.avif';
+import { useState } from 'react';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any } // Using a cubic-bezier for smoother feel
+};
 
 export const ServiceDetail = () => {
   const navigate = useNavigate()
   const { id } = useParams();
+  const [hoveredWork, setHoveredWork] = useState<number | null>(null);
   const services = [
     {
       id: "photography-videography",
@@ -211,108 +220,162 @@ export const ServiceDetail = () => {
     }]
   const service = services.find(s => s.id === id);
 
-  if (!service) return <div className="text-white">Service not found</div>;
+  if (!service) return <div className="text-white bg-black min-h-screen flex items-center justify-center">Service not found</div>;
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
-      <section className="relative h-[65vh] flex items-end px-6 pb-20">
-        <div className="absolute inset-0 z-0">
-          <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
+    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-white selection:text-black">
+
+      {/* SECTION 1: POLISHED HERO */}
+      <section className="relative min-h-[80vh] flex items-center px-4 md:px-6">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.img
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.4 }}
+            transition={{ duration: 1.5 }}
+            src={service.image}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
         </div>
+
+        <Link to="/" className="fixed top-6 left-4 md:top-8 md:left-10 z-50 inline-flex items-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-5 py-2 text-sm font-medium text-white hover:bg-white hover:text-black transition-all group shadow-2xl">
+          <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={18} />
+          Back Home
+        </Link>
+
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <Link to="/" className="inline-flex items-center text-zinc-500 hover:text-white mb-8 transition-colors group">
-            <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={25} />
-            Back to Home
-          </Link>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-6xl md:text-8xl font-bold tracking-tighter mb-6">
-            {service.title}
-          </motion.h1>
-          <p className="max-w-2xl text-xl text-zinc-400 font-light leading-relaxed">{service.subtitle}</p>
+          <motion.div {...fadeInUp}>
+            <span className="inline-block px-4 py-1 rounded-full border border-white/20 text-xs uppercase tracking-widest mb-6 bg-white/5 backdrop-blur-sm">Premium Studio Service</span>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-bold tracking-tighter mb-8 leading-[0.85]">
+              {(service.title || '').split(' ').map((word, i) => (
+                <span key={i} className={i % 2 !== 0 ? "text  -zinc-500" : ""}>{word} </span>
+              ))}
+            </h1>
+            <p className="max-w-xl text-lg md:text-2xl text-zinc-400 font-light leading-relaxed mb-10">
+              {service.subtitle}
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Specialized Capabilities Section  */}
-      <section className="py-32 px-6 max-w-7xl mx-auto border-t border-zinc-900">
-        <div className="mb-20">
-          <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-6">Service Specializations</h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tighter text-white max-w-3xl">
-            Technical execution designed for commercial scale.
-          </h3>
-        </div>
+      {/* SECTION 2: SUB-SERVICES (Interactive Chips) */}
+      <section className="pb-20 px-6 max-w-7xl mx-auto">
+        <motion.div {...fadeInUp} className="mb-12">
+          <h2 className="text-sm uppercase tracking-[0.3em] text-zinc-500 mb-4">Specializations</h2>
+          <div className="h-px w-20 bg-white" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {service.Specializations?.map((item, i) => (
-            <div key={i} className="group p-0 border border-zinc-900 bg-zinc-950/50 rounded-4xl hover:bg-zinc-900/30 hover:border-zinc-800 transition-all flex flex-col h-full overflow-hidden">
-              <div className="relative aspect-4/3 w-full overflow-hidden bg-zinc-900">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600";
-                  }}
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/80 to-transparent pointer-events-none" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              key={i}
+              className="group relative overflow-hidden bg-zinc-950 border border-zinc-900 rounded-3xl p-6 hover:border-white/30 transition-all cursor-default"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-zinc-900 rounded-2xl group-hover:bg-white group-hover:text-black transition-colors">
+                  <Camera size={20} />
+                </div>
+                <ArrowLeft className="rotate-135 opacity-0 group-hover:opacity-100 transition-opacity text-zinc-500" size={20} />
               </div>
-              <div className="p-8 pt-10 flex flex-col grow">
-                <h4 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-zinc-300 transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-8 grow">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
+              <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
+              <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Technical Deliverables & Consultative CTA  */}
-      <section className="py-32 px-6 max-w-7xl mx-auto border-t border-zinc-900">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-6">Deliverables & Standards</h2>
-              <p className="text-zinc-400 font-light mb-8">Every project includes a comprehensive master asset package engineered for long-term utility.</p>
-            </div>
-            <div className="space-y-4">
-              {service.deliverables.map((item, i) => (
-                <div key={i} className="flex items-center gap-4 text-zinc-300 border-b border-zinc-900 pb-4 last:border-0">
-                  <CheckCircle2 size={18} className="text-white shrink-0" />
-                  <span className="text-base font-light tracking-wide">{item}</span>
-                </div>
-              ))}
-            </div>
+      {/* SECTION 3: THE WORK GALLERY (Bento Grid) */}
+      <section className="py-20 px-6 max-w-7xl mx-auto bg-zinc-950/30 rounded-[3rem] border border-zinc-900/50">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <motion.div
+            initial={fadeInUp.initial}
+            whileInView={fadeInUp.whileInView}
+            viewport={fadeInUp.viewport}
+            transition={fadeInUp.transition}
+            className="..."
+          >
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Our Portfolio</h2>
+            <p className="text-zinc-500 mt-4">A curated selection of {service.title} projects.</p>
+          </motion.div>
+          <div className="flex gap-4">
+            <span className="text-xs uppercase tracking-widest text-zinc-600 border border-zinc-800 px-4 py-2 rounded-full">4K Cinematic</span>
+            <span className="text-xs uppercase tracking-widest text-zinc-600 border border-zinc-800 px-4 py-2 rounded-full">Color Graded</span>
           </div>
+        </div>
 
-          <div className="bg-white text-black p-14 rounded-[2.5rem] flex flex-col justify-between shadow-2xl">
-            <div>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 leading-[0.9]">
-                Discuss Your Production Goals.
-              </h3>
-              <p className="text-zinc-600 mb-10 text-lg leading-relaxed">
-                Skip the guesswork. Schedule a technical consultation to review your upcoming project requirements and receive a structured production proposal tailored to your brand.
-              </p>
-            </div>
-              <button 
-              onClick={()=> navigate("/contact")}
-              className="bg-black cursor-pointer text-white px-10 py-5 rounded-full font-bold hover:bg-zinc-800 transition-all text-center">
-                Let's Connect
-              </button>
-          </div>
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          {service.Specializations?.map((item, i) => (
+            <motion.div
+              key={i}
+              onMouseEnter={() => setHoveredWork(i)}
+              onMouseLeave={() => setHoveredWork(null)}
+              className={`${hoveredWork === i ? 'ring-2 ring-white/20' : ''} relative break-inside-avoid rounded-3xl overflow-hidden group cursor-pointer bg-zinc-900`}
+              {...fadeInUp}
+            >
+              <img
+                src={item.image}
+                alt=""
+                className="w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+              />
+
+              <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-white font-medium text-lg">{item.title}</p>
+                <div className="flex items-center gap-2 text-zinc-400 text-xs mt-2 uppercase tracking-tighter">
+                  <Play size={12} fill="currentColor" /> Preview Work
+                </div>
+              </div>
+
+              {/* Icon Overlay */}
+              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="bg-white/10 backdrop-blur-md p-3 rounded-full border border-white/20">
+                  <ExternalLink size={18} className="text-white" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Video Placeholder Section */}
-      <section className="py-32 px-6 max-w-7xl mx-auto border-t border-zinc-900 text-center">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4 tracking-tight">Behind the Lens</h2>
-          <p className="text-zinc-500">Watch our production process in action.</p>
-        </div>
-        <div className="aspect-video w-full bg-zinc-900 rounded-3xl flex items-center justify-center border border-zinc-800 group cursor-pointer relative overflow-hidden">
-          <div className="absolute inset-0 bg-zinc-800 opacity-0 group-hover:opacity-20 transition-opacity" />
-          <Play size={64} className="text-white group-hover:scale-110 transition-transform" />
+      {/* SECTION 4: THE CONNECTION (Consultative CTA) */}
+      <section className="py-32 px-6 max-w-7xl mx-auto">
+        <div className="relative overflow-hidden bg-white rounded-[3rem] p-8 md:p-20 text-black group">
+          {/* Animated Background Element */}
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-zinc-200 rounded-full blur-3xl group-hover:bg-zinc-300 transition-colors duration-700" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">
+                Ready to elevate your <span className="text-zinc-400">visual story?</span>
+              </h3>
+              <div className="space-y-4">
+                {service.deliverables.slice(0, 3).map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-zinc-600">
+                    <CheckCircle2 size={18} className="text-black" />
+                    <span className="text-lg font-medium tracking-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center lg:items-end">
+              <p className="text-zinc-500 mb-8 text-lg text-center lg:text-right max-w-sm">
+                We're currently booking projects for next month. Let's discuss your timeline.
+              </p>
+              <button
+                onClick={() => navigate("/contact")}
+                className="w-full md:w-auto bg-black text-white px-12 py-6 rounded-2xl font-bold hover:scale-105 transition-all flex items-center justify-center gap-3 text-xl shadow-xl active:scale-95"
+              >
+                Start a Project
+                <ExternalLink size={20} />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
