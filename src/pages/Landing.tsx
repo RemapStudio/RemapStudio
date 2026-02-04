@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Camera, Video, Scissors, Plane, Cpu, PenTool, ArrowRight, LucideIcon } from 'lucide-react';
+import { Camera, Video, Scissors, Plane, Cpu, PenTool, ArrowRight, LucideIcon, Instagram, Linkedin } from 'lucide-react';
 import { Navbar } from '../component/Navbar';
 import { ServiceCard } from '../component/ServiceCard';
 import { Contactus } from './Contactus';
 import { AboutPage } from './Aboutpage';
 import { ConstellationBackground } from '../component/ConstellationBackground';
+import { Link } from 'react-router-dom';
 
 interface ServiceItem {
   id: string;
@@ -162,32 +163,55 @@ export const Landing: React.FC = () => {
         <Contactus />
       </section>
 
-      <footer className="py-16 px-6 border-t border-zinc-900">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-          <div>
-            <div className="font-black text-2xl tracking-tighter mb-4">REMAP STUDIO</div>
-            <p className="text-zinc-600 text-sm max-w-xs font-light">
+      <footer className="relative py-15 px-6 border-t border-zinc-900 bg-black overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-60">
+          <ConstellationBackground />
+        </div>
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,transparent_10%,black_70%)] z-1 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+          <div className="group">
+            <div className="font-black text-2xl tracking-tighter mb-4 group-hover:tracking-normal transition-all duration-500 ease-in-out">
+              REMAP STUDIO
+            </div>
+            <p className="text-[12px] md:text-sm text-zinc-400 max-w-xs font-light leading-relaxed">
               Premium visual production for startups, corporate brands, and marketing teams worldwide.
             </p>
           </div>
-          <div className="gap-30">
-            <div className="space-y-4 flex flex-col">
-              <h5 className="text-[10px] uppercase tracking-widest text-zinc-400">Contact</h5>
-              <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">manager.remapstudio@gmail.com</a>
-              <a href="mailto:hello@remapstudio.com" className="text-sm text-zinc-500 hover:text-white transition-colors cursor-pointer">hello@remapstudio.com</a>
-              <div className="text-sm text-zinc-500">Hyderabad / Delhi / Remote</div>
-            </div>
+
+          <div className="flex flex-col md:flex-row gap-10 md:gap-24">
             <div className="space-y-4">
-              <h5 className="text-[10px] uppercase tracking-widest pt-6 text-zinc-400">Social</h5>
-              <div className="flex flex-col gap-2 text-sm text-zinc-500">
-                <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-colors">Instagram</a>
-                <a href="https://www.linkedin.com/company/remapstudio/" className="hover:text-white transition-colors">LinkedIn</a>
+              <h5 className="text-[10px] uppercase tracking-widest text-zinc-500">Contact</h5>
+              <div className="flex flex-col space-y-2">
+                <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-400 hover:text-white transition-colors duration-300">
+                  manager.remapstudio@gmail.com
+                </a>
+                <a href="mailto:hello@remapstudio.com" className="text-sm text-zinc-400 hover:text-white transition-colors duration-300">
+                  hello@remapstudio.com
+                </a>
+                <div className="text-sm text-zinc-500 font-light">Hyderabad / Delhi / Remote</div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h5 className="text-[10px] uppercase tracking-widest text-zinc-500 md:pt-0">Social</h5>
+              <div className="flex gap-6 text-zinc-500">
+                <a href="#" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <Instagram size={22} strokeWidth={1.5} />
+                </a>
+                <a href="#" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <Linkedin size={22} strokeWidth={1.5} />
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-15 pt-5 border-t border-zinc-900 text-[10px] text-zinc-600 uppercase tracking-widest">
-          © 2026 Remap Studio. All Rights Reserved.
+
+        <div className="relative z-10 max-w-7xl mx-auto mt-20 pt-5 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between gap-4">
+          <p className="text-[10px] text-zinc-400 uppercase tracking-[0.2em]">
+            © 2026 Remap Studio. All Rights Reserved.
+          </p>
         </div>
       </footer>
     </div>

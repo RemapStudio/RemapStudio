@@ -22,8 +22,8 @@ export const ConstellationBackground: React.FC = () => {
         this.x = x; this.y = y;
         this.baseX = x; this.baseY = y;
         // Subtle random drift
-        this.vx = (Math.random() - 0.5) * 0.2;
-        this.vy = (Math.random() - 0.5) * 0.2;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
         this.density = (Math.random() * 20) + 1;
       }
 
@@ -48,11 +48,9 @@ export const ConstellationBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        // THEME: Using white with low opacity for a clean look
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
         ctx.beginPath();
-        // SIZE: Increased radius from 1 to 1.8 to make dots more visible
-        ctx.arc(this.x, this.y, 1.8, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, 2.2, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -98,8 +96,11 @@ export const ConstellationBackground: React.FC = () => {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      if (!canvasRef.current) return;
+      const rect = canvasRef.current.getBoundingClientRect();
+
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
