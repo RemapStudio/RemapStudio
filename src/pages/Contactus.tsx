@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from "@emailjs/browser";
-import { ArrowRight, Mail, Phone, Instagram, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
 
@@ -108,7 +108,7 @@ export const Contactus = () => {
 
                     {/* Right Column - 7 Cols */}
                     <motion.div 
-                        className="lg:col-span-7 bg-zinc-900/20 border border-zinc-800/50 p-8 md:p-12 rounded-[2rem] backdrop-blur-sm"
+                        className="lg:col-span-7 bg-zinc-900/20 border border-zinc-800/50 p-8 md:p-12 rounded-4xl backdrop-blur-sm"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, ease: "circOut" }}
@@ -181,7 +181,7 @@ export const Contactus = () => {
 
 /* Helper Components to keep the main code clean */
 
-const ContactLink = ({ label, value, href, icon }: { label: string, value: string, href: string, icon: React.ReactNode }) => (
+const ContactLink = ({ label, value, href }: { label: string, value: string, href: string, icon: React.ReactNode }) => (
     <a href={href} className="group flex flex-col gap-1 transition-all">
         <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">{label}</span>
         <div className="flex items-center gap-3">
