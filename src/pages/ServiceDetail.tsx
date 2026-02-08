@@ -66,10 +66,10 @@ export const ServiceDetail = () => {
       ],
       Specializations: [
         { title: "Corporate Photoshoots", image: imgurl, desc: "Executive portraits and environmental office photography captured with high-end lighting setups.", youtubeId: undefined },
-        { title: "Product Photography", image: "", desc: "Precision e-commerce and catalog photography focusing on material texture and color accuracy.", youtubeId: undefined },
-        { title: "Event Documentation", image: "", desc: "Comprehensive photo and video coverage for high-stakes corporate seminars and product launches.", youtubeId: undefined },
-        { title: "Real Estate & Interiors", image: "", desc: "Architectural photography using specialized lenses to document commercial and residential spaces.", youtubeId: undefined },
-        { title: "Interviews & Testimonials", image: "", desc: "Direct-to-camera video production featuring professional sound engineering and multicam setups.", youtubeId: undefined },
+        { title: "Product Photography", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200", desc: "Precision e-commerce and catalog photography focusing on material texture and color accuracy.", youtubeId: undefined },
+        { title: "Event Documentation", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200", desc: "Comprehensive photo and video coverage for high-stakes corporate seminars and product launches.", youtubeId: undefined },
+        { title: "Real Estate & Interiors", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200", desc: "Architectural photography using specialized lenses to document commercial and residential spaces.", youtubeId: undefined },
+        { title: "Interviews & Testimonials", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200", desc: "Direct-to-camera video production featuring professional sound engineering and multicam setups.", youtubeId: undefined },
         { title: "Business Campaign Shoots", image: RealEstateImg, desc: "Concept-driven visual production for multi-channel digital ads and brand promotions.", youtubeId: undefined }
       ]
     }, {
@@ -78,8 +78,8 @@ export const ServiceDetail = () => {
       subtitle: "Complete video production services to help your business grow and reach more people.",
       image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=800&auto=format&fit=crop",
       Specializations: [
-        { title: "Ad Creatives & Promotional Videos", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", desc: "Dynamic video ads optimized for social media platforms to drive engagement and conversions.", youtubeId: undefined },
-        { title: "Social Media Reels & Short-Form Content", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", desc: "Bite-sized video content tailored for platforms like Instagram, TikTok, and LinkedIn to boost brand visibility.", youtubeId: undefined },
+        { title: "Ad Creatives & Promotional Videos", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", desc: "Dynamic video ads optimized for social media platforms to drive engagement and conversions.", youtubeId: "LxDEy-wPVRY?si=tN-fjNNA7sjjBVvQ" },
+        { title: "Social Media Reels & Short-Form Content", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", desc: "Bite-sized video content tailored for platforms like Instagram, TikTok, and LinkedIn to boost brand visibility.", youtubeId: "snNhbkF6nSw?si=ewn1YYddoqydcpDH" },
         { title: "Motion Graphics & Animated Titles", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", desc: "Engaging motion graphics and animated elements to enhance video storytelling and viewer retention.", youtubeId: undefined }
       ]
     }, {
