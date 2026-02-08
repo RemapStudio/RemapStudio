@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { Camera, Video, Scissors, Plane, Cpu, PenTool, LucideIcon, Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
+import {  motion, Variants } from 'framer-motion';
+import { Camera, Video, Scissors, Plane, Cpu, PenTool, LucideIcon, Instagram, Linkedin } from 'lucide-react';
 import { Navbar } from '../component/Navbar';
 import { ServiceCard } from '../component/ServiceCard';
 import { Contactus } from './Contactus';
 import { AboutPage } from './Aboutpage';
 import { ConstellationBackground } from '../component/ConstellationBackground';
-import mp4 from '../assets/video/mp4.mp4';
+// import mp4 from '../assets/video/mp4.mp4';
 import remapstudio from '../assets/LOGO/remapStudio.png';
 
 interface ServiceItem {
@@ -17,11 +17,6 @@ interface ServiceItem {
   image: string;
   capabilities?: string[];
 }
-
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 }, // Add this key
@@ -102,7 +97,7 @@ export const Landing: React.FC = () => {
             <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
               BRINGING <br />
               YOUR <br />
-              <span className="text-cyan-400">STORY</span> <br />
+              <span className="text-cyan-400">{words[index]}</span> <br />
               TO THE WORLD
             </h2>
           </div>
@@ -117,14 +112,14 @@ export const Landing: React.FC = () => {
 
         {/* RIGHT SIDE: LANDSCAPE VIDEO BOX */}
         <div className="relative w-full md:w-[45%] h-[40vh] md:h-[60vh] mt-12 md:mt-0">
-          <div className="relative w-full h-full overflow-hidden rounded-[2rem] md:rounded-[2rem] border border-white/10 shadow-2xl">
+          <div className="relative w-full h-full overflow-hidden rounded-4xl md:rounded-4xl border border-white/10 shadow-2xl">
             <iframe
               className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               src={`https://www.youtube.com/embed/snNhbkF6nSw?autoplay=1&mute=1&loop=1&playlist=snNhbkF6nSw&controls=0&modestbranding=1&rel=0`}
               allow="autoplay; encrypted-media"
             />
             {/* Gradient Overlay for color depth */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-tr from-black/40 via-transparent to-transparent z-10" />
           </div>
 
           {/* Background Glow to make it colorful and attractive */}

@@ -5,13 +5,15 @@ import { useEffect, useState } from 'react';
 import { Contactus } from './Contactus';
 
 // import CorporateImg from '../assets/CorporateImg.avif';
-import Burger from '../assets/Burger.jpg';
+// import Burger from '../assets/Burger.jpg';
 import divine from '../assets/divine.jpg';
-import flyerwork from '../assets/flyerwork.jpg';
-import krsna from '../assets/krsna.jpg';
+// import flyerwork from '../assets/flyerwork.jpg';
+// import krsna from '../assets/krsna.jpg';
 import organicmilk from '../assets/organicmilk.jpg';
-import post1 from '../assets/post1.jpg';
-import post2 from '../assets/post2.jpg';
+import post1 from '../assets/post1.png';
+import post2 from '../assets/post2.png';
+import flyer35e from '../assets/flyer35e.jpg';
+import RealEstateImg from '../assets/RealEstateImg.avif';
 import imgurl from '../assets/imgurl.avif';
 
 const fadeInUp = {
@@ -63,12 +65,12 @@ export const ServiceDetail = () => {
         "Full commercial usage rights"
       ],
       Specializations: [
-        { title: "Corporate Photoshoots", image: Burger, desc: "Executive portraits and environmental office photography captured with high-end lighting setups.", youtubeId: undefined },
-        { title: "Product Photography", image: flyerwork, desc: "Precision e-commerce and catalog photography focusing on material texture and color accuracy.", youtubeId: undefined },
-        { title: "Event Documentation", image: divine, desc: "Comprehensive photo and video coverage for high-stakes corporate seminars and product launches.", youtubeId: undefined },
-        { title: "Real Estate & Interiors", image: krsna, desc: "Architectural photography using specialized lenses to document commercial and residential spaces.", youtubeId: undefined },
-        { title: "Interviews & Testimonials", image: organicmilk, desc: "Direct-to-camera video production featuring professional sound engineering and multicam setups.", youtubeId: undefined },
-        { title: "Business Campaign Shoots", image: imgurl, desc: "Concept-driven visual production for multi-channel digital ads and brand promotions.", youtubeId: undefined }
+        { title: "Corporate Photoshoots", image: imgurl, desc: "Executive portraits and environmental office photography captured with high-end lighting setups.", youtubeId: undefined },
+        { title: "Product Photography", image: "", desc: "Precision e-commerce and catalog photography focusing on material texture and color accuracy.", youtubeId: undefined },
+        { title: "Event Documentation", image: "", desc: "Comprehensive photo and video coverage for high-stakes corporate seminars and product launches.", youtubeId: undefined },
+        { title: "Real Estate & Interiors", image: "", desc: "Architectural photography using specialized lenses to document commercial and residential spaces.", youtubeId: undefined },
+        { title: "Interviews & Testimonials", image: "", desc: "Direct-to-camera video production featuring professional sound engineering and multicam setups.", youtubeId: undefined },
+        { title: "Business Campaign Shoots", image: RealEstateImg, desc: "Concept-driven visual production for multi-channel digital ads and brand promotions.", youtubeId: undefined }
       ]
     }, {
       id: "commercial-brand-production",
@@ -171,7 +173,7 @@ export const ServiceDetail = () => {
         { title: "Social Media Post & Ad Creatives", image: organicmilk, desc: "Eye-catching graphics designed for maximum engagement across various social media platforms.", youtubeId: undefined},
         {
           title: "Posters, Flyers & Event Promotions",
-          image: divine,
+          image: flyer35e,
           desc: "Creative designs for posters, flyers, and event promotions that capture attention and convey your message effectively.",
           youtubeId: undefined
         },
@@ -314,17 +316,17 @@ export const ServiceDetail = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedWorkIndex(null)}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
           >
             {/* Close Button */}
-            <button className="absolute top-6 right-6 text-white/50 hover:text-white z-[110]">
+            <button className="absolute top-6 right-6 text-white/50 hover:text-white z-110">
               <X size={32} />
             </button>
 
             {/* Left Navigation Button */}
             <button
               onClick={prevImage}
-              className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white z-[110] transition-all"
+              className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white z-110 transition-all"
             >
               <ChevronLeft size={32} />
             </button>
@@ -363,7 +365,7 @@ export const ServiceDetail = () => {
             {/* Right Navigation Button */}
             <button
               onClick={nextImage}
-              className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white z-[110] transition-all"
+              className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white z-110 transition-all"
             >
               <ChevronRight size={32} />
             </button>
