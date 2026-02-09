@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {  motion, Variants } from 'framer-motion';
-import { Camera, Video, Scissors, Plane, Cpu, PenTool, LucideIcon, Instagram, Linkedin } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { Camera, Video, Scissors, Plane, Cpu, PenTool, LucideIcon, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Navbar } from '../component/Navbar';
 import { ServiceCard } from '../component/ServiceCard';
 import { Contactus } from './Contactus';
@@ -19,7 +19,7 @@ interface ServiceItem {
 }
 
 const staggerContainer: Variants = {
-  hidden: { opacity: 0 }, // Add this key
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.2, delayChildren: 0.3 }
@@ -76,7 +76,6 @@ export const Landing: React.FC = () => {
   const [index, setIndex] = useState(0);
   const words = ["STORY", "VISION", "BRAND", "IDEAS"];
 
-  // Cycle through words every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
@@ -85,82 +84,80 @@ export const Landing: React.FC = () => {
   }, []);
   return (
     <div className="bg-black text-white selection:bg-white selection:text-black font-sans antialiased">
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-40"><ConstellationBackground /></div>
       <Navbar />
-      <section className="relative min-h-screen bg-[#050505] flex flex-col md:flex-row items-center justify-between overflow-hidden px-6 md:px-20 pt-20 pb-6">
-        <div className="absolute inset-0 z-0">
-          <ConstellationBackground />
-        </div>
 
-        {/* LEFT SIDE: KINETIC TYPOGRAPHY */}
-        <div className="relative z-20 w-full md:w-1/2 pt-10">
-          <div className="space-y-0">
-            <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
-              BRINGING <br />
-              YOUR <br />
-              <span className="text-cyan-400">{words[index]}</span> <br />
-              TO THE WORLD
-            </h2>
+      <main className="relative z-10">
+
+        {/* HERO SECTION */}
+        <section className="relative min-h-screen overflow-hidden pt-20 pb-6 flex items-center">
+          <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+
+              <div className="w-full md:w-1/2">
+                <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
+                  BRINGING <br />
+                  YOUR <br />
+                  <span className="text-cyan-400">{words[index]}</span> <br />
+                  TO THE WORLD
+                </h2>
+                <div className="mt-12">
+                  <p className="text-zinc-400 text-lg md:text-xl font-medium max-w-sm leading-tight">
+                    We deliver Cinematic production and <br />
+                    AI-powered <span className="text-white">creative to scale your brand.</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative w-full md:w-[45%] h-[40vh] md:h-[55vh]">
+                <div className="relative w-full h-full overflow-hidden rounded-4xl border border-white/10 shadow-2xl bg-black">
+                  <iframe
+                    className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                    src={`https://www.youtube.com/embed/snNhbkF6nSw?autoplay=1&mute=1&loop=1&playlist=snNhbkF6nSw&controls=0&modestbranding=1&rel=0`}
+                    allow="autoplay; encrypted-media"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-tr from-black/60 via-transparent to-transparent z-10" />
+                </div>
+                <div className="absolute -inset-4 bg-white/5 blur-3xl rounded-full z-[-1]" />
+              </div>
+            </div>
           </div>
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[-1]"
+            style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        </section>
 
-          <div className="mt-12 space-y-8">
-            <p className="text-zinc-400 text-lg md:text-xl font-medium max-w-sm leading-tight">
-              We deliver Cinematic production and <br />
-              AI-powered <span className="text-white">creative to scale your brand.</span>
-            </p>
+        {/* SERVICES SECTION */}
+        <section id="services" className="py-24 max-w-7xl mx-auto px-6">
+          <div className="px-6"> 
+            <div className="mb-15 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="max-w-xl">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Core Services</h2>
+                <p className="text-zinc-500 font-light">From traditional lenses to artificial intelligence, we use the best tool for the objective.</p>
+              </div>
+            </div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {services.map((service, i) => (
+                <ServiceCard key={service.title} {...service} index={i} />
+              ))}
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* RIGHT SIDE: LANDSCAPE VIDEO BOX */}
-        <div className="relative w-full md:w-[45%] h-[40vh] md:h-[60vh] mt-12 md:mt-0">
-          <div className="relative w-full h-full overflow-hidden rounded-4xl md:rounded-4xl border border-white/10 shadow-2xl">
-            <iframe
-              className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              src={`https://www.youtube.com/embed/snNhbkF6nSw?autoplay=1&mute=1&loop=1&playlist=snNhbkF6nSw&controls=0&modestbranding=1&rel=0`}
-              allow="autoplay; encrypted-media"
-            />
-            {/* Gradient Overlay for color depth */}
-            <div className="absolute inset-0 bg-linear-to-tr from-black/40 via-transparent to-transparent z-10" />
-          </div>
+        <section id="about" className='bg-zinc-950/50 backdrop-blur-sm border-y border-zinc-900'>
+          <AboutPage />
+        </section>
+        <section id="contact" className='bg-zinc-950/50 backdrop-blur-sm border-y border-zinc-900'>
+          <Contactus />
+        </section>
 
-          {/* Background Glow to make it colorful and attractive */}
-          <div className="absolute -inset-4 bg-white/5 blur-3xl rounded-full z-[-1]" />
-        </div>
-
-        {/* Decorative Grid background */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-      </section>
-
-      <div className="border-y border-zinc-900 bg-black"></div>
-
-      <section id="services" className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="mb-15 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Core Services</h2>
-            <p className="text-zinc-500 font-light">From traditional lenses to artificial intelligence, we use the best tool for the objective.</p>
-          </div>
-        </div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {services.map((service, i) => (
-            <ServiceCard key={service.title} {...service} index={i} />
-          ))}
-        </motion.div>
-      </section>
-
-      <section id="about" className='bg-zinc-950 border-y border-zinc-900'>
-        <AboutPage />
-      </section>
-      <section id="contact" className='bg-zinc-950 border-y border-zinc-900'>
-        <Contactus />
-      </section>
-
+      </main>
       <footer className="relative py-15 px-6 border-t border-zinc-900 bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-60">
           <ConstellationBackground />
@@ -198,10 +195,13 @@ export const Landing: React.FC = () => {
               <h5 className="text-[10px] uppercase tracking-widest text-zinc-500 md:pt-0">Social</h5>
               <div className="flex gap-6 text-zinc-500">
                 <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <Instagram size={22} strokeWidth={1.5} />
+                  <Instagram size={24} strokeWidth={1.5} />
                 </a>
                 <a href="https://www.linkedin.com/company/remapstudio/" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <Linkedin size={22} strokeWidth={1.5} />
+                  <Linkedin size={24} strokeWidth={1.5} />
+                </a>
+                <a href="https://www.youtube.com/@RemapStudio" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <Youtube size={24} strokeWidth={1.5} />
                 </a>
               </div>
             </div>

@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'
         }`}>
         {/* Main Alignment Container - Matches your ServiceDetail and Contact max-width */}
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-360 mx-auto px-4 md:px-10">
           <div className={`flex justify-between items-center transition-all duration-500 px-6 py-4 rounded-full border ${scrolled
               ? 'bg-black/60 backdrop-blur-xl border-white/10 shadow-2xl'
               : 'bg-transparent border-transparent'
@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
 
             {/* Desktop Links - Aligned Center-Right */}
             <div className="hidden md:flex items-center gap-10">
-              <div className="flex gap-8 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-500">
+              <div className="flex gap-8 text-sm uppercase tracking-[0.3em] font-bold text-zinc-500">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}

@@ -3,12 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, Camera, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Contactus } from './Contactus';
-
-// import CorporateImg from '../assets/CorporateImg.avif';
-// import Burger from '../assets/Burger.jpg';
 import divine from '../assets/divine.jpg';
-// import flyerwork from '../assets/flyerwork.jpg';
-// import krsna from '../assets/krsna.jpg';
 import organicmilk from '../assets/organicmilk.jpg';
 import post1 from '../assets/post1.png';
 import post2 from '../assets/post2.png';
@@ -203,7 +198,6 @@ export const ServiceDetail = () => {
   return (
     <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-white selection:text-black">
 
-      {/* NAVIGATION - Improved for Mobile */}
       <nav className="fixed top-0 left-0 w-full z-50 p-4 md:p-10 pointer-events-none">
         <Link to="/" className="pointer-events-auto inline-flex items-center bg-black/20 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 md:px-6 md:py-3 text-sm font-medium text-white hover:bg-white hover:text-black transition-all group shadow-2xl">
           <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={16} />
@@ -212,7 +206,7 @@ export const ServiceDetail = () => {
         </Link>
       </nav>
 
-      {/* SECTION 1: FLUID HERO */}
+      {/* HERO SECTION */}
       <section className="relative pt-30 md:min-h-screen flex items-center px-6 md:px-12">
         <div className="absolute inset-0 z-0">
           <motion.img
@@ -239,7 +233,7 @@ export const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* SECTION 2: SPECIALIZATIONS - Fixed Grid for Mobile */}
+      {/* SPECIALIZATIONS SECTION */}
       <section className="py-10 px-6 max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-12">
           <h2 className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 mb-4 font-bold">Specializations</h2>
@@ -269,7 +263,7 @@ export const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* SECTION 3: PORTFOLIO - Responsive Bento Grid */}
+      {/* PORTFOLIO SECTION */}
       <section className="py-16 px-4 md:px-8 mx-0 md:mx-6 bg-zinc-950/50 rounded-none md:rounded-[3.5rem] border-y md:border border-zinc-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col mb-12 gap-4">
@@ -372,7 +366,8 @@ export const ServiceDetail = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* SECTION 4: CONTACT */}
+
+      {/* CONTACT SECTION */}
       <section id="contact" className="mt-10 border-t border-zinc-900">
         <Contactus />
       </section>

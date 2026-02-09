@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Camera, Video, Palette, Zap, CheckCircle2, Target, Trophy, Clock } from 'lucide-react';
+import { Camera, Video, Palette, Zap} from 'lucide-react';
 
 export const AboutPage = () => {
 
@@ -65,31 +65,6 @@ export const AboutPage = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us section */}
-      <section className="py-14 px-6 bg-zinc-950/40">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight">Why Businesses Trust Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-            {[
-              { icon: Target, title: "Business-Focused Results", desc: "Visuals designed specifically to get you more customers." },
-              { icon: Trophy, title: "Premium Quality", desc: "High standards in lighting, sound, and professional editing." },
-              { icon: Clock, title: "Reliable Timelines", desc: "We stick to our schedules and deliver on or before the deadline." },
-              { icon: CheckCircle2, title: "Market Expertise", desc: "Local Indian expertise with global production standards." }
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-6 items-start">
-                <div className="p-3 bg-zinc-900 rounded-lg">
-                  <item.icon className="text-white" size={24} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
-                  <p className="text-zinc-500 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
