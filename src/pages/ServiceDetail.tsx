@@ -83,22 +83,9 @@ export const ServiceDetail = () => {
       subtitle: "We turn your raw footage into professional videos that grab and keep attention.",
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",
       Specializations: [
-        {
-          title: "Cinematic Editing & Story Pacing",
-          image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",
-          desc: "Crafting compelling narratives through meticulous editing techniques that maintain audience engagement.",
-          youtubeId: undefined
-        }, {
-          title: "Color Grading & Film Looks",
-          image: imgurl,
-          desc: "Applying professional color grading to achieve specific moods and visual aesthetics aligned with brand identity.",
-          youtubeId: undefined
-        }, {
-          title: "Audio Cleanup & Sound Design",
-          image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop",
-          desc: "Enhancing audio quality through noise reduction, sound effects, and balanced mixing for a polished final product.",
-          youtubeId: undefined
-        }
+        { title: "Cinematic Editing & Story Pacing", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",desc: "Crafting compelling narratives through meticulous editing techniques that maintain audience engagement.",youtubeId: undefined}, 
+        { title: "Color Grading & Film Looks", image: imgurl,desc: "Applying professional color grading to achieve specific moods and visual aesthetics aligned with brand identity.", youtubeId: undefined }, 
+        { title: "Audio Cleanup & Sound Design", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop", desc: "Enhancing audio quality through noise reduction, sound effects, and balanced mixing for a polished final product.", youtubeId: undefined}
       ]
     }, {
       id: "drone-photography-videography",
@@ -106,27 +93,10 @@ export const ServiceDetail = () => {
       subtitle: "Stunning aerial views for real estate, factories, and big construction projects.",
       image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
       Specializations: [
-        {
-          title: "Real Estate Drone Tours",
-          image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
-          youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5",
-          desc: "Captivating aerial footage showcasing property exteriors and surrounding landscapes for real estate marketing.",
-        }, {
-          title: "Corporate & Industrial Aerial Coverage",
-          image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",
-          desc: "Professional drone videography for large-scale corporate events, construction sites, and industrial facilities.",
-          youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo"
-        }, {
-          title: "Outdoor Events & Travel Visuals",
-          image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
-          desc: "Dynamic aerial coverage capturing the essence of outdoor events and travel experiences.",
-          youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H"
-        }, {
-          title: "Construction Progress Monitoring",
-          image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",
-          desc: "Regular aerial documentation of construction sites to monitor progress and provide stakeholders with visual updates.",
-          youtubeId: undefined
-        }
+        { title: "Real Estate Drone Tours", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5",desc: "Captivating aerial footage showcasing property exteriors and surrounding landscapes for real estate marketing.",}, 
+        { title: "Corporate & Industrial Aerial Coverage", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",desc: "Professional drone videography for large-scale corporate events, construction sites, and industrial facilities.",youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo"}, 
+        { title: "Outdoor Events & Travel Visuals", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",desc: "Dynamic aerial coverage capturing the essence of outdoor events and travel experiences.",youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H"}, 
+        {title: "Construction Progress Monitoring", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",desc: "Regular aerial documentation of construction sites to monitor progress and provide stakeholders with visual updates.",youtubeId: undefined}
       ]
     }, {
       id: "ai-powered-video-ugc-content",
