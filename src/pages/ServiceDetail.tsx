@@ -47,6 +47,7 @@ export const ServiceDetail = () => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [id]);
+
   const services = [
     {
       id: "photography-videography",
@@ -54,111 +55,102 @@ export const ServiceDetail = () => {
       subtitle: "Professional photos and videos that make your brand look premium and build customer trust.",
       image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200",
       deliverables: [
-        "High-resolution edited photographs",
-        "4K cinematic video files",
-        "Professional sound mixing",
-        "Full commercial usage rights"
+        { title: "High-resolution edited photographs", image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800" },
+        { title: "4K cinematic video files", image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800" },
+        { title: "Professional sound mixing", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800" },
+        { title: "Full commercial usage rights", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Corporate Photoshoots", image: imgurl, desc: "Executive portraits and environmental office photography captured with high-end lighting setups.", youtubeId: undefined },
-        { title: "Product Photography", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200", desc: "Precision e-commerce and catalog photography focusing on material texture and color accuracy.", youtubeId: undefined },
-        { title: "Event Documentation", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200", desc: "Comprehensive photo and video coverage for high-stakes corporate seminars and product launches.", youtubeId: undefined },
-        { title: "Real Estate & Interiors", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200", desc: "Architectural photography using specialized lenses to document commercial and residential spaces.", youtubeId: undefined },
-        { title: "Interviews & Testimonials", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200", desc: "Direct-to-camera video production featuring professional sound engineering and multicam setups.", youtubeId: undefined },
-        { title: "Business Campaign Shoots", image: RealEstateImg, desc: "Concept-driven visual production for multi-channel digital ads and brand promotions.", youtubeId: undefined }
+        { title: "Corporate Photoshoots", image: imgurl, youtubeId: undefined },
+        { title: "Product Photography", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200", youtubeId: undefined },
+        { title: "Event Documentation", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200", youtubeId: undefined },
+        { title: "Real Estate & Interiors", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200", youtubeId: undefined },
+        { title: "Interviews & Testimonials", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200", youtubeId: undefined },
+        { title: "Business Campaign Shoots", image: RealEstateImg, youtubeId: undefined }
       ]
     }, {
       id: "commercial-brand-production",
       title: "Commercial & Brand Production",
       subtitle: "Complete video production services to help your business grow and reach more people.",
       image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=800&auto=format&fit=crop",
+      deliverables: [
+        { title: "Full-length commercial videos", image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800" },
+        { title: "Short-form social media clips", image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800" },
+        { title: "Behind-the-scenes footage", image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop" },
+        { title: "Custom thumbnails and graphics", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" }
+      ],
       Specializations: [
-        { title: "Ad Creatives & Promotional Videos", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", desc: "Dynamic video ads optimized for social media platforms to drive engagement and conversions.", youtubeId: "LxDEy-wPVRY?si=tN-fjNNA7sjjBVvQ" },
-        { title: "Social Media Reels & Short-Form Content", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", desc: "Bite-sized video content tailored for platforms like Instagram, TikTok, and LinkedIn to boost brand visibility.", youtubeId: "snNhbkF6nSw?si=ewn1YYddoqydcpDH" },
-        { title: "Motion Graphics & Animated Titles", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", desc: "Engaging motion graphics and animated elements to enhance video storytelling and viewer retention.", youtubeId: undefined }
+        { title: "Bellavita Ad Film", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", youtubeId: "LxDEy-wPVRY?si=tN-fjNNA7sjjBVvQ" },
+        { title: "BlueDe chanel CGI Ad", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", youtubeId: "snNhbkF6nSw?si=ewn1YYddoqydcpDH" },
+        { title: "Motion Graphics & Animated Titles", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
       ]
     }, {
       id: "editing-post-production",
       title: "Editing & Post-Production",
       subtitle: "We turn your raw footage into professional videos that grab and keep attention.",
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",
+      deliverables: [
+        { title: "Color graded footage", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" },
+        { title: "Enhanced audio tracks", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800" },
+        { title: "Final cut ready for distribution", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" }
+      ],
       Specializations: [
-        { title: "Cinematic Editing & Story Pacing", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",desc: "Crafting compelling narratives through meticulous editing techniques that maintain audience engagement.",youtubeId: undefined}, 
-        { title: "Color Grading & Film Looks", image: imgurl,desc: "Applying professional color grading to achieve specific moods and visual aesthetics aligned with brand identity.", youtubeId: undefined }, 
-        { title: "Audio Cleanup & Sound Design", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop", desc: "Enhancing audio quality through noise reduction, sound effects, and balanced mixing for a polished final product.", youtubeId: undefined}
+        { title: "Cinematic Editing & Story Pacing", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop", youtubeId: undefined },
+        { title: "Color Grading & Film Looks", image: imgurl, youtubeId: undefined },
+        { title: "Audio Cleanup & Sound Design", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
       ]
     }, {
       id: "drone-photography-videography",
       title: "Drone Photography & Videography",
       subtitle: "Stunning aerial views for real estate, factories, and big construction projects.",
       image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
+      deliverables: [
+        { title: "High-resolution aerial photographs", image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=800" },
+        { title: "4K drone video footage", image: "https://images.unsplash.com/photo-1506947411487-a56738267384?q=80&w=800" },
+        { title: "Edited and color graded content", image: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=800" },
+        { title: "Compliance with aviation regulations", image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664?q=80&w=800" }
+      ],
       Specializations: [
-        { title: "Real Estate Drone Tours", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5",desc: "Captivating aerial footage showcasing property exteriors and surrounding landscapes for real estate marketing.",}, 
-        { title: "Corporate & Industrial Aerial Coverage", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",desc: "Professional drone videography for large-scale corporate events, construction sites, and industrial facilities.",youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo"}, 
-        { title: "Outdoor Events & Travel Visuals", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",desc: "Dynamic aerial coverage capturing the essence of outdoor events and travel experiences.",youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H"}, 
-        {title: "Construction Progress Monitoring", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop",desc: "Regular aerial documentation of construction sites to monitor progress and provide stakeholders with visual updates.",youtubeId: undefined}
+        { title: "Above the World Cinematic Travel Visuals", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop", youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo" },
+        { title: "Construction Site Progress Monitoring – Visual Documentation", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop", youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5", },
+        { title: "Real Estate Aerial Showcase Drone Cinematography", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H" },
       ]
     }, {
       id: "ai-powered-video-ugc-content",
       title: "AI-Powered Video & UGC Content",
       subtitle: "Using AI to create high-quality ads and customer-style videos quickly and affordably.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
+      deliverables: [
+        { title: "AI-generated video ads", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800" },
+        { title: "User-generated content (UGC) assets", image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop" },
+        { title: "Optimized social media clips", image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop" },
+        { title: "Performance analytics reports", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" }
+      ],
       Specializations: [
-        {
-          title: "AI-Generated Commercial Videos for Campaigns",
-          image: imgurl,
-          desc: "Utilizing generative AI to create engaging commercial videos tailored for digital marketing campaigns.",
-          youtubeId: undefined
-        },
-        {
-          title: "Creator-Style AI UGC Ads (Reels, Shorts Formats)",
-          image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop",
-          desc: "Producing authentic, creator-style user-generated content using AI for platforms like Instagram Reels and YouTube Shorts.",
-          youtubeId: undefined
-        },
-        {
-          title: "AI Product Reviews & Testimonial Videos",
-          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
-          desc: "Generating realistic product review and testimonial videos through advanced AI techniques to build trust and credibility.",
-          youtubeId: undefined
-        },
-        {
-          title: "Script-to-Video Ads with AI Voiceovers",
-          image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=800&auto=format&fit=crop",
-          desc: "Transforming scripts into engaging video ads with AI-generated voiceovers for a polished and professional finish.",
-          youtubeId: undefined
-        }
+        { title: "AI Powered Hair Story", image: imgurl, youtubeId: "93mY8Bl3qBs?si=250RdtdzsnqNWyBA" },
+        { title: "AI Powered Skin Story", image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop", youtubeId: "3HxlK3ZLvdQ?si=bIKHUkpFkDDaMEr-" },
+        { title: "Aloe Glow — Reimagined by AI", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop", youtubeId: "zl3LUjZL2HA?si=-_PuIIYC5F3zjH5_" },
+        { title: "Designed in the Future", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=800&auto=format&fit=crop", youtubeId: "SP0uqnChCqQ?si=5f0uzzRl2Lb29Uot" },
+        { title: "Fruit Glow — Reimagined by AI", image: "https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop", youtubeId: "tyvopmAo0Ck?si=_SstCevrPCgtIPTE" },
+        { title: "Future of Skincare Ads", image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop", youtubeId: "Tq-v3pZ2-eI?si=XFG5B42tGPIzMR1R" },
+        { title: "Glow the Cocoa Way", image: "https://images.unsplash.com/photo-1608248547160-fbc763c01567?q=80&w=800&auto=format&fit=crop", youtubeId: "ZJ8QqDBXYCo?si=w0lrRujhoeiwmEQs" }
       ]
     }, {
       id: "graphic-design-creative-branding",
       title: "Graphic Design & Creative Branding",
       subtitle: "Modern designs that make your business look professional and trustworthy.",
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
+      deliverables: [
+        { title: "Custom logo designs", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800" },
+        { title: "Digital assets (social media graphics, banners)", image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800" },
+        { title: "Comprehensive brand style guide", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800" }
+      ],
       Specializations: [
-        { title: "Social Media Post & Ad Creatives", image: organicmilk, desc: "Eye-catching graphics designed for maximum engagement across various social media platforms.", youtubeId: undefined},
-        {
-          title: "Posters, Flyers & Event Promotions",
-          image: flyer35e,
-          desc: "Creative designs for posters, flyers, and event promotions that capture attention and convey your message effectively.",
-          youtubeId: undefined
-        },
-        {
-          title: "Business Cards & Corporate Stationery",
-          image: divine,
-          desc: "Professional business card and corporate stationery designs that reinforce your brand identity.",
-          youtubeId: undefined
-        },
-        {
-          title: "Pitch Deck & Company Profile Design",
-          image: post1,
-          desc: "Visually compelling pitch decks and company profiles that effectively communicate your value proposition to stakeholders.",
-          youtubeId: undefined
-        }, {
-          title: "Thumbnails & YouTube Creative Design",
-          image: post2,
-          desc: "Custom-designed thumbnails and YouTube graphics that enhance video visibility and attract viewers.",
-          youtubeId: undefined
-        }
+        { title: "Social Media Post & Ad Creatives", image: organicmilk, youtubeId: undefined },
+        { title: "Posters, Flyers & Event Promotions", image: flyer35e, youtubeId: undefined },
+        { title: "Business Cards & Corporate Stationery", image: divine, youtubeId: undefined },
+        { title: "Pitch Deck & Company Profile Design", image: post1, youtubeId: undefined },
+        { title: "Thumbnails & YouTube Creative Design", image: post2, youtubeId: undefined }
       ]
     }]
   const service = services.find(s => s.id === id);
@@ -177,64 +169,34 @@ export const ServiceDetail = () => {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative pt-30 md:min-h-screen flex items-center px-6 md:px-12">
+      <section className="relative pt-32 pb-16 md:py-0 md:h-[60vh] flex items-center px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.img
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.5 }}
             transition={{ duration: 1.5 }}
             src={service.image}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <motion.div {...fadeInUp}>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 leading-[0.9]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">
               {service.title.split(' ').map((word, i) => (
                 <span key={i} className={i % 2 !== 0 ? "text-zinc-500" : "text-white"}>{word} </span>
               ))}
             </h1>
-            <p className="max-w-2xl text-base sm:text-lg md:text-2xl text-zinc-400 font-light leading-relaxed">
+            <p className="max-w-2xl text-base sm:text-lg md:text-xl text-zinc-400 font-light leading-relaxed">
               {service.subtitle}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SPECIALIZATIONS SECTION */}
-      <section className="py-10 px-6 max-w-7xl mx-auto">
-        <motion.div {...fadeInUp} className="mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 mb-4 font-bold">Specializations</h2>
-          <div className="h-px w-12 bg-white/30" />
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {service.Specializations?.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.05 }}
-              viewport={{ once: true }}
-              className="group relative bg-zinc-900/40 border border-zinc-800/50 rounded-2xl md:rounded-3xl p-6 md:p-8 hover:bg-zinc-900 transition-all"
-            >
-              <div className="flex justify-between items-center mb-6">
-                <div className="p-3 bg-zinc-800 rounded-xl group-hover:bg-white group-hover:text-black transition-colors duration-500">
-                  <Camera size={20} />
-                </div>
-                <div className="h-px grow mx-4 bg-zinc-800 group-hover:bg-zinc-700 transition-colors" />
-              </div>
-              <h4 className="text-lg md:text-xl font-semibold mb-3">{item.title}</h4>
-              <p className="text-zinc-500 text-sm leading-relaxed font-light">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* PORTFOLIO SECTION */}
-      <section className="py-16 px-4 md:px-8 mx-0 md:mx-6 bg-zinc-950/50 rounded-none md:rounded-[3.5rem] border-y md:border border-zinc-900/50">
+      <section className="py-10 px-4 md:px-8 mx-0 md:mx-6 bg-zinc-950/50 rounded-none md:rounded-[3.5rem] border-y md:border border-zinc-900/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col mb-12 gap-4">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tight">Our Portfolio</h2>
@@ -271,6 +233,51 @@ export const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* SPECIALIZATIONS SECTION */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <motion.div {...fadeInUp} className="mb-12">
+          <h2 className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 mb-4 font-bold">What You Get</h2>
+          <div className="h-px w-12 bg-white/30" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {service.deliverables?.map((item, i) => {
+            const itemObj = typeof item === 'string' ? { title: item, image: '' } : item;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="group relative bg-zinc-900/40 border border-zinc-800/50 rounded-2xl md:rounded-3xl overflow-hidden hover:bg-zinc-900 transition-all"
+              >
+                {/* Deliverable Image */}
+                <div className="h-48 w-full overflow-hidden">
+                  <img
+                    src={itemObj.image}
+                    alt={itemObj.title}
+                    className="w-full h-auto object-cover transition-all duration-700 brightness-100 group-hover:brightness-125 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Content Box */}
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="p-2 bg-zinc-800 rounded-lg group-hover:bg-white group-hover:text-black transition-colors duration-500">
+                      <Camera size={16} />
+                    </div>
+                    <div className="h-px grow ml-4 bg-zinc-800" />
+                  </div>
+                  <h4 className="text-sm md:text-base font-medium leading-snug">{itemObj.title}</h4>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
 
       {/* WHATSAPP-STYLE POPUP WINDOW */}
       <AnimatePresence>
@@ -322,7 +329,6 @@ export const ServiceDetail = () => {
 
               <div className="mt-6 text-center">
                 <h3 className="text-xl md:text-2xl font-bold">{service.Specializations[selectedWorkIndex].title}</h3>
-                <p className="text-zinc-500 mt-2 max-w-xl">{service.Specializations[selectedWorkIndex].desc}</p>
               </div>
             </motion.div>
 
