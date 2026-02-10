@@ -63,7 +63,7 @@ export const Contactus = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black overflow-x-hidden">
+        <div className="min-h-screen text-white selection:bg-white selection:text-black overflow-x-hidden">
             <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-zinc-900/30 blur-[120px] rounded-full" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-white/5 blur-[100px] rounded-full" />

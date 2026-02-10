@@ -84,7 +84,7 @@ export const Landing: React.FC = () => {
   }, []);
   return (
     <div className="bg-black text-white selection:bg-white selection:text-black font-sans antialiased">
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-40"><ConstellationBackground /></div>
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-45"><ConstellationBackground /></div>
       <Navbar />
 
       <main className="relative z-10">
@@ -92,9 +92,9 @@ export const Landing: React.FC = () => {
         {/* HERO SECTION */}
         <section className="relative min-h-screen overflow-hidden pt-20 pb-6 flex items-center">
           <div className="max-w-7xl mx-auto px-6 w-full">
-            <div className="px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className=" flex flex-col md:flex-row items-center justify-between gap-12">
 
-              <div className="w-full md:w-1/2">
+              <div className="w-full md:w-1/2 pr-10">
                 <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
                   BRINGING <br />
                   YOUR <br />
@@ -109,7 +109,7 @@ export const Landing: React.FC = () => {
                 </div>
               </div>
 
-              <div className="relative w-full md:w-[45%] h-[40vh] md:h-[55vh]">
+              <div className="relative w-full md:w-[55%] h-[40vh] md:h-[45vh]">
                 <div className="relative w-full h-full overflow-hidden rounded-4xl border border-white/10 shadow-2xl bg-black">
                   <iframe
                     className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
@@ -128,7 +128,7 @@ export const Landing: React.FC = () => {
 
         {/* SERVICES SECTION */}
         <section id="services" className="py-24 max-w-7xl mx-auto px-6">
-          <div className="px-6"> 
+          <div className="px-6">
             <div className="mb-15 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div className="max-w-xl">
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Core Services</h2>
@@ -150,14 +150,16 @@ export const Landing: React.FC = () => {
           </div>
         </section>
 
-        <section id="about" className='bg-zinc-950/50 backdrop-blur-sm border-y border-zinc-900'>
+        <section id="about" className='relative border-t border-zinc-900/50'>
           <AboutPage />
         </section>
-        <section id="contact" className='bg-zinc-950/50 backdrop-blur-sm border-y border-zinc-900'>
+
+        <section id="contact" className='relative border-t border-zinc-900/50'>
           <Contactus />
         </section>
 
       </main>
+
       <footer className="relative py-15 px-6 border-t border-zinc-900 bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-60">
           <ConstellationBackground />
@@ -166,13 +168,13 @@ export const Landing: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,transparent_10%,black_70%)] z-1 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-          <div className="group">
+          <div className="group flex flex-col items-start text-left">
             <img
               src={remapstudio}
               alt="Remap Studio Logo"
-              className="h-8 md:h-10 w-auto mb-5 object-contain"
+              className="h-8 md:h-10 w-auto mb-5 object-left object-contain"
             />
-            <p className="text-[12px] md:text-sm text-zinc-400 max-w-xs font-light leading-relaxed">
+            <p className="text-[15px] md:text-[16px] text-zinc-300 max-w-100 font-light leading-relaxed">
               Premium visual production for startups, corporate brands, and marketing teams worldwide.
             </p>
           </div>
@@ -181,13 +183,13 @@ export const Landing: React.FC = () => {
             <div className="space-y-4">
               <h5 className="text-[10px] uppercase tracking-widest text-zinc-500">Contact</h5>
               <div className="flex flex-col space-y-2">
-                <a href="mailto:manager.remapstudio@gmail.com" className="text-sm text-zinc-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:manager.remapstudio@gmail.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
                   manager.remapstudio@gmail.com
                 </a>
-                <a href="mailto:hello@remapstudio.com" className="text-sm text-zinc-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:hello@remapstudio.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
                   hello@remapstudio.com
                 </a>
-                <div className="text-sm text-zinc-500 font-light">Hyderabad / Delhi / Remote</div>
+                <div className="text-[15px] text-zinc-500 font-light">Hyderabad / Delhi / Remote</div>
               </div>
             </div>
 
@@ -209,7 +211,7 @@ export const Landing: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto mt-20 pt-5 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-[10px] text-zinc-400 uppercase tracking-[0.2em]">
+          <p className="text-[13px] text-zinc-300 uppercase tracking-[0.2em]">
             © 2026 Remap Studio. All Rights Reserved.
           </p>
         </div>
