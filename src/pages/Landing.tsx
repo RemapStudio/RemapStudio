@@ -6,7 +6,6 @@ import { ServiceCard } from '../component/ServiceCard';
 import { Contactus } from './Contactus';
 import { AboutPage } from './Aboutpage';
 import { ConstellationBackground } from '../component/ConstellationBackground';
-// import mp4 from '../assets/video/mp4.mp4';
 import remapstudio from '../assets/LOGO/remapStudio.png';
 
 interface ServiceItem {
@@ -82,6 +81,7 @@ export const Landing: React.FC = () => {
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
   return (
     <div className="bg-black text-white selection:bg-white selection:text-black font-sans antialiased">
       <div className="fixed inset-0 z-0 pointer-events-none opacity-45"><ConstellationBackground /></div>
@@ -90,27 +90,27 @@ export const Landing: React.FC = () => {
       <main className="relative z-10">
 
         {/* HERO SECTION */}
-        <section className="relative min-h-screen overflow-hidden pt-20 pb-6 flex items-center">
-          <div className="max-w-7xl mx-auto px-6 w-full">
-            <div className=" flex flex-col md:flex-row items-center justify-between gap-12">
+        <section id="home" className="relative min-h-screen overflow-hidden pt-25 flex items-center">
+          <div className="max-w-348 mx-auto px-6 w-full">
+            <div className=" flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 ">
 
-              <div className="w-full md:w-1/2 pr-10">
-                <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
+              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pr-10">
+                <h2 className="font-helvetica text-white text-5xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
                   BRINGING <br />
                   YOUR <br />
                   <span className="text-cyan-400">{words[index]}</span> <br />
                   TO THE WORLD
                 </h2>
-                <div className="mt-12">
-                  <p className="text-zinc-400 text-lg md:text-xl font-medium max-w-sm leading-tight">
+                <div className="mt-8 md:mt-12">
+                  <p className="text-zinc-400 text-lg md:text-xl font-medium max-w-sm mx-auto lg:mx-0 leading-tight">
                     We deliver Cinematic production and <br />
                     AI-powered <span className="text-white">creative to scale your brand.</span>
                   </p>
                 </div>
               </div>
 
-              <div className="relative w-full md:w-[55%] h-[40vh] md:h-[45vh]">
-                <div className="relative w-full h-full overflow-hidden rounded-4xl border border-white/10 shadow-2xl bg-black">
+              <div className="relative w-full md:w-[55%] h-[40vh] md:h-[63vh]">
+                <div className="relative w-full aspect-video lg:aspect-square xl:aspect-video overflow-hidden rounded-3xl md:rounded-4xl border border-white/10 shadow-2xl bg-black">
                   <iframe
                     className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                     src={`https://www.youtube.com/embed/snNhbkF6nSw?autoplay=1&mute=1&loop=1&playlist=snNhbkF6nSw&controls=0&modestbranding=1&rel=0`}
@@ -127,7 +127,7 @@ export const Landing: React.FC = () => {
         </section>
 
         {/* SERVICES SECTION */}
-        <section id="services" className="py-24 max-w-7xl mx-auto px-6">
+        <section id="services" className="py-24 max-w-350 mx-auto">
           <div className="px-6">
             <div className="mb-15 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div className="max-w-xl">
@@ -181,7 +181,7 @@ export const Landing: React.FC = () => {
 
           <div className="flex flex-col md:flex-row gap-10 md:gap-24">
             <div className="space-y-4">
-              <h5 className="text-[10px] uppercase tracking-widest text-zinc-500">Contact</h5>
+              <h5 className="text-xs uppercase tracking-widest text-zinc-400">Contact</h5>
               <div className="flex flex-col space-y-2">
                 <a href="mailto:manager.remapstudio@gmail.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
                   manager.remapstudio@gmail.com
@@ -189,12 +189,12 @@ export const Landing: React.FC = () => {
                 <a href="mailto:hello@remapstudio.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
                   hello@remapstudio.com
                 </a>
-                <div className="text-[15px] text-zinc-500 font-light">Hyderabad / Delhi / Remote</div>
+                <div className="text-xs text-zinc-400 font-light">Hyderabad / Delhi / Remote</div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h5 className="text-[10px] uppercase tracking-widest text-zinc-500 md:pt-0">Social</h5>
+              <h5 className="text-xs uppercase tracking-widest text-zinc-400 md:pt-0">Social</h5>
               <div className="flex gap-6 text-zinc-500">
                 <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Instagram size={24} strokeWidth={1.5} />
@@ -211,7 +211,7 @@ export const Landing: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto mt-20 pt-5 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-[13px] text-zinc-300 uppercase tracking-[0.2em]">
+          <p className="text-xs text-zinc-300 uppercase tracking-[0.2em]">
             © 2026 Remap Studio. All Rights Reserved.
           </p>
         </div>
