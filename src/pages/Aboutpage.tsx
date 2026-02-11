@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, Trophy, CheckCircle2, Target, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Clock, Trophy, CheckCircle2, Target, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export const AboutPage = () => {
@@ -36,9 +36,9 @@ export const AboutPage = () => {
 
       {/* BENTO GRID SECTION */}
       <section className="py-15 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-338 mx-auto">
           <div className="flex justify-between items-end mb-12">
-            <h3 className="text-4xl font-bold tracking-tighter">Our work</h3>
+            <h3 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Our work</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[250px] md:auto-rows-[300px] gap-4">
@@ -96,15 +96,8 @@ export const AboutPage = () => {
             onClick={() => setSelectedWorkIndex(null)}
             className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
           >
-            {/* CLOSE BUTTON - Fixed cursor and pointer events */}
-            <button
-              onClick={() => setSelectedWorkIndex(null)}
-              className="absolute top-6 right-6 text-white/50 cursor-pointer hover:text-white z-110 p-2 pointer-events-auto transition-colors"
-            >
-              <X size={32} />
-            </button>
 
-            {/* NAVIGATION BUTTONS - Fixed cursor and pointer events */}
+            {/* NAVIGATION BUTTONS */}
             <button
               onClick={prevImage}
               className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white z-110 cursor-pointer pointer-events-auto transition-all"
@@ -112,7 +105,7 @@ export const AboutPage = () => {
               <ChevronLeft size={32} />
             </button>
 
-            {/* ... Content Container ... */}
+            {/* Content Container */}
             <motion.div
               key={selectedWorkIndex}
               initial={{ scale: 0.9, opacity: 0 }}
