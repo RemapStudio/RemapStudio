@@ -18,14 +18,13 @@ interface ServiceCardProps extends ServiceItem {
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } }
 };
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ id, icon: Icon, title, desc, image }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate()
   const handleClick = () => {
-    // Handle card click, e.g., navigate to service detail page
     navigate(`/${id}`);
   }
 
@@ -37,7 +36,6 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ id, icon: Icon, title,
       onClick={handleClick}
     >
       <div className="relative h-48 w-full overflow-hidden bg-zinc-800/20">
-        {/* Skeleton Shimmer Effect */}
         {!isLoaded && (
           <div className="absolute inset-0 bg-zinc-900 animate-pulse" />
         )}
