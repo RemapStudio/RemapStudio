@@ -173,7 +173,7 @@ export const Contactus = () => {
 
                             <button
                                 type="submit"
-                                className="group relative w-full md:w-auto flex items-center justify-between gap-12 bg-white text-black pl-8 pr-3 py-3 rounded-full overflow-hidden hover:bg-zinc-200 transition-all active:scale-[0.98]"
+                                className="group relative w-full cursor-pointer md:w-auto flex items-center justify-between gap-12 bg-white text-black pl-8 pr-3 py-3 rounded-full overflow-hidden hover:bg-zinc-200 transition-all active:scale-[0.98]"
                             >
                                 <span className="font-bold uppercase text-xs tracking-widest">Send Inquiry</span>
                                 <div className="bg-black text-white p-3 rounded-full group-hover:rotate-45 transition-transform duration-500">

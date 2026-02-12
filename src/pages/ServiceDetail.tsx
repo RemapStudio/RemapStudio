@@ -217,7 +217,7 @@ export const ServiceDetail = () => {
                 >
                   <div className="relative aspect-video sm:aspect-auto">
                     <img
-                      src={displayImage} // Use the variable we defined above
+                      src={displayImage} // 
                       alt={item.title}
                       className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                     />
@@ -237,7 +237,7 @@ export const ServiceDetail = () => {
       {/* SPECIALIZATIONS SECTION */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <motion.div {...fadeInUp} className="mb-12">
-          <h2 className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 mb-4 font-bold">What You Get</h2>
+          <h2 className="text-xs uppercase tracking-[0.4em] text-zinc-400 mb-4 font-bold">What You Get</h2>
           <div className="h-px w-12 bg-white/30" />
         </motion.div>
 
@@ -265,7 +265,7 @@ export const ServiceDetail = () => {
                 {/* Content Box */}
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <div className="p-2 bg-zinc-800 rounded-lg group-hover:bg-white group-hover:text-black transition-colors duration-500">
+                    <div className="p-2 bg-zinc-800 rounded-lg group-hover:text-cyan-400 transition-colors duration-500">
                       <Camera size={16} />
                     </div>
                     <div className="h-px grow ml-4 bg-zinc-800" />
@@ -290,7 +290,7 @@ export const ServiceDetail = () => {
             className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
           >
             {/* Close Button */}
-            <button className="absolute top-6 right-6 text-white/50 hover:text-white z-110">
+            <button className="absolute top-6 cursor-pointer right-6 text-white/50 hover:text-white z-110">
               <X size={32} />
             </button>
 
