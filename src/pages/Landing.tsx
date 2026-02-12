@@ -90,27 +90,21 @@ export const Landing: React.FC = () => {
       <main className="relative z-10">
 
         {/* HERO SECTION */}
-        <section id="home" className="relative min-h-screen overflow-hidden pt-25 flex items-center">
+        <section id="home" className="relative min-h-screen overflow-hidden pt-20 lg:pt-30 flex flex-col justify-center">
           <div className="max-w-348 mx-auto px-6 w-full">
-            <div className=" flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-0 lg:gap-x-12 items-stretch">
 
-              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pr-10">
-                <h2 className="font-helvetica text-white text-5xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.8]">
+              <div className="flex flex-col justify-end order-1">
+                <h2 className="font-helvetica text-white text-6xl md:text-[110px] font-black tracking-[-0.06em] uppercase leading-[0.85] lg:leading-[0.8]">
                   BRINGING <br />
                   YOUR <br />
                   <span className="text-cyan-400">{words[index]}</span> <br />
                   TO THE WORLD
                 </h2>
-                <div className="mt-8 md:mt-12">
-                  <p className="text-zinc-400 text-lg md:text-xl font-medium max-w-sm mx-auto lg:mx-0 leading-tight">
-                    We deliver Cinematic production and <br />
-                    AI-powered <span className="text-white">creative to scale your brand.</span>
-                  </p>
-                </div>
               </div>
 
-              <div className="relative w-full md:w-[55%] h-[40vh] md:h-[63vh]">
-                <div className="relative w-full aspect-video lg:aspect-square xl:aspect-video overflow-hidden rounded-3xl md:rounded-4xl border border-white/10 shadow-2xl bg-black">
+              <div className="relative order-2 lg:row-span-1 flex items-stretch">
+                <div className="relative w-full h-full min-h-62.5 sm:min-h-87.5 lg:min-h-0 aspect-video lg:aspect-auto overflow-hidden rounded-3xl md:rounded-4xl border border-white/10 shadow-2xl bg-black">
                   <iframe
                     className="absolute top-1/2 left-1/2 w-[180%] h-[120%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                     src={`https://www.youtube.com/embed/snNhbkF6nSw?autoplay=1&mute=1&loop=1&playlist=snNhbkF6nSw&controls=0&modestbranding=1&rel=0`}
@@ -120,10 +114,17 @@ export const Landing: React.FC = () => {
                 </div>
                 <div className="absolute -inset-4 bg-white/5 blur-3xl rounded-full z-[-1]" />
               </div>
+
+              <div className="order-3 mt-2 lg:mt-8 md:mt-12">
+                <p className="text-zinc-400 text-base md:text-xl font-medium max-w-sm mx-auto lg:mx-0 leading-tight">
+                  We deliver Cinematic production and <br />
+                  AI-powered <span className="text-white">creative to scale your brand.</span>
+                </p>
+              </div>
+
+              <div className="hidden lg:block order-4"></div>
             </div>
           </div>
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[-1]"
-            style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         </section>
 
         {/* SERVICES SECTION */}
@@ -181,20 +182,20 @@ export const Landing: React.FC = () => {
 
           <div className="flex flex-col md:flex-row gap-10 md:gap-24">
             <div className="space-y-4">
-              <h5 className="text-xs uppercase tracking-widest text-zinc-400">Contact</h5>
+              <h5 className="text-xs uppercase tracking-widest text-zinc-300">Contact</h5>
               <div className="flex flex-col space-y-2">
-                <a href="mailto:manager.remapstudio@gmail.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:manager.remapstudio@gmail.com" className="text-[15px] text-zinc-300 hover:text-white transition-colors duration-300">
                   manager.remapstudio@gmail.com
                 </a>
-                <a href="mailto:hello@remapstudio.com" className="text-[15px] text-zinc-400 hover:text-white transition-colors duration-300">
+                <a href="mailto:hello@remapstudio.com" className="text-[15px] text-zinc-300 hover:text-white transition-colors duration-300">
                   hello@remapstudio.com
                 </a>
-                <div className="text-xs text-zinc-400 font-light">Hyderabad / Delhi / Remote</div>
+                <div className="text-xs text-zinc-300 ">Hyderabad / Delhi / Remote</div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h5 className="text-xs uppercase tracking-widest text-zinc-400 md:pt-0">Social</h5>
+              <h5 className="text-xs uppercase tracking-widest text-zinc-300 md:pt-0">Social</h5>
               <div className="flex gap-6 text-zinc-500">
                 <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Instagram size={24} strokeWidth={1.5} />

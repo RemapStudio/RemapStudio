@@ -138,7 +138,7 @@ export const Contactus = () => {
                                     onChange={(v) => setFormData({ ...formData, phone: v })}
                                 />
                                 <div className="space-y-2 group">
-                                    <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Service Interested In</label>
+                                    <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">Service Interested In</label>
                                     <div className="relative border-b border-zinc-800 group-focus-within:border-white transition-colors duration-500">
                                         <select
                                             required
@@ -161,7 +161,7 @@ export const Contactus = () => {
 
 
                             <div className="space-y-2 group">
-                                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Message</label>
+                                <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">Message</label>
                                 <textarea
                                     rows={3}
                                     placeholder="Briefly describe your objective..."
@@ -204,12 +204,12 @@ const ContactLink = ({ label, value, href }: { label: string, value: string, hre
 
 const FloatingInput = ({ label, placeholder, value, onChange, type = "text" }: { label: string, placeholder: string, value: string, onChange: (v: string) => void, type?: string }) => (
     <div className="space-y-2 group">
-        <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">{label}</label>
+        <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">{label}</label>
         <input
             type={type}
             placeholder={placeholder}
             required
-            className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-white transition-colors duration-500 text-lg font-light placeholder:text-zinc-800"
+            className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-white transition-colors duration-500 text-lg font-light placeholder:text-zinc-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             value={value}
             onChange={(e) => onChange(e.target.value)}
         />
