@@ -82,7 +82,7 @@ export const Contactus = () => {
                         <motion.div variants={itemVariants} className="space-y-4">
                             <h1 className="text-6xl md:text-8xl font-medium tracking-tighter leading-[0.85]">
                                 Let's craft <br />
-                                <span className="italic font-light">Visuals together.</span>
+                                <span className="italic font-light text-cyan-400">Visuals together.</span>
                             </h1>
                         </motion.div>
 
@@ -132,17 +132,19 @@ export const Contactus = () => {
                                 />
                                 <FloatingInput
                                     label="Phone"
-                                    type="number"
+                                    type="tel"
                                     placeholder="Enter Your Phone Number"
                                     value={formData.phone}
                                     onChange={(v) => setFormData({ ...formData, phone: v })}
                                 />
                                 <div className="space-y-2 group">
-                                    <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">Service Interested In</label>
-                                    <div className="relative border-b border-zinc-800 group-focus-within:border-white transition-colors duration-500">
+                                    <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1 group-focus-within:text-cyan-400 transition-colors">
+                                        Service Interested In
+                                    </label>
+                                    <div className="relative border-b border-zinc-800 group-focus-within:border-cyan-400 transition-colors duration-500">
                                         <select
                                             required
-                                            className="w-full bg-transparent py-4 outline-none appearance-none cursor-pointer text-lg font-light"
+                                            className="w-full bg-transparent py-4 outline-none appearance-none cursor-pointer text-lg font-light group-focus-within:text-cyan-400 transition-colors"
                                             value={formData.service}
                                             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                                         >
@@ -152,7 +154,7 @@ export const Contactus = () => {
                                             <option value="branding" className="bg-black text-white">Brand Architecture</option>
                                             <option value="design" className="bg-black text-white">Creative Design</option>
                                         </select>
-                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500">
+                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500 group-focus-within:text-cyan-400 transition-colors">
                                             <ArrowUpRight size={20} />
                                         </div>
                                     </div>
@@ -161,11 +163,13 @@ export const Contactus = () => {
 
 
                             <div className="space-y-2 group">
-                                <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">Message</label>
+                                <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1 group-focus-within:text-cyan-400 transition-colors">
+                                    Message
+                                </label>
                                 <textarea
                                     rows={3}
                                     placeholder="Briefly describe your objective..."
-                                    className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-white transition-colors duration-500 resize-none text-lg font-light"
+                                    className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-cyan-400 transition-colors duration-500 resize-none text-lg font-light placeholder:text-zinc-800"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 />
@@ -173,10 +177,10 @@ export const Contactus = () => {
 
                             <button
                                 type="submit"
-                                className="group relative w-full cursor-pointer md:w-auto flex items-center justify-between gap-12 bg-white text-black pl-8 pr-3 py-3 rounded-full overflow-hidden hover:bg-zinc-200 transition-all active:scale-[0.98]"
+                                className="group relative w-full cursor-pointer md:w-auto flex items-center justify-between gap-12 bg-white text-black pl-8 pr-3 py-3 rounded-full overflow-hidden hover:bg-cyan-50 transition-all active:scale-[0.98]"
                             >
                                 <span className="font-bold uppercase text-xs tracking-widest">Send Inquiry</span>
-                                <div className="bg-black text-white p-3 rounded-full group-hover:rotate-45 transition-transform duration-500">
+                                <div className="bg-black text-white p-3 rounded-full group-hover:bg-cyan-400 group-hover:text-black group-hover:rotate-45 transition-all duration-500">
                                     <ArrowRight size={20} />
                                 </div>
                             </button>
@@ -189,13 +193,12 @@ export const Contactus = () => {
 };
 
 /* Helper Components to keep the main code clean */
-
 const ContactLink = ({ label, value, href }: { label: string, value: string, href: string, icon: React.ReactNode }) => (
     <a href={href} className="group flex flex-col gap-1 transition-all">
-        <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">{label}</span>
+        <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold group-hover:text-cyan-400 transition-colors">{label}</span>
         <div className="flex items-center gap-3">
-            <span className="text-xl font-light text-zinc-300 group-hover:text-white transition-colors">{value}</span>
-            <div className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-white">
+            <span className="text-xl font-light text-zinc-300 group-hover:text-cyan-400 transition-colors">{value}</span>
+            <div className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-cyan-400">
                 <ArrowUpRight size={18} />
             </div>
         </div>
@@ -204,12 +207,12 @@ const ContactLink = ({ label, value, href }: { label: string, value: string, hre
 
 const FloatingInput = ({ label, placeholder, value, onChange, type = "text" }: { label: string, placeholder: string, value: string, onChange: (v: string) => void, type?: string }) => (
     <div className="space-y-2 group">
-        <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1">{label}</label>
+        <label className="text-xs uppercase tracking-widest text-zinc-300 font-bold ml-1 group-focus-within:text-cyan-400 transition-colors">{label}</label>
         <input
             type={type}
             placeholder={placeholder}
             required
-            className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-white transition-colors duration-500 text-lg font-light placeholder:text-zinc-800 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="w-full bg-transparent border-b border-zinc-800 py-4 outline-none group-focus-within:border-cyan-400 transition-colors duration-500 text-lg font-light placeholder:text-zinc-800"
             value={value}
             onChange={(e) => onChange(e.target.value)}
         />

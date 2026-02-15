@@ -1,15 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, Trophy, CheckCircle2, Target, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-export const AboutPage = () => {
+export const Ouework = () => {
   const [hoveredWork, setHoveredWork] = useState<number | null>(null);
   const [selectedWorkIndex, setSelectedWorkIndex] = useState<number | null>(null);
 
   const featuredWork = [
-    { title: "AI Powered Skin Story", category: "Production", size: "md:col-span-2 md:row-span-2", youtubeId: "3HxlK3ZLvdQ" },
-    { title: "Above the World Cinematic Travel Visuals", category: "Photography", size: "md:col-span-1 md:row-span-1", youtubeId: "igPWHsJpVaw" },
-    { title: "Glow the Cocoa Way", category: "Drone", size: "md:col-span-1 md:row-span-1", youtubeId: "ZJ8QqDBXYCo" },
+    { title: "AI Powered Skin Story", size: "md:col-span-2 md:row-span-2", youtubeId: "3HxlK3ZLvdQ" },
+    { title: "Above the World Cinematic Travel Visuals", size: "md:col-span-1 md:row-span-1", youtubeId: "igPWHsJpVaw" },
+    { title: "Glow the Cocoa Way",  size: "md:col-span-1 md:row-span-1", youtubeId: "ZJ8QqDBXYCo" },
   ];
 
   // Navigation Logic
@@ -76,7 +76,7 @@ export const AboutPage = () => {
                     )}
                   </div>
                   <div className="relative z-10 h-full p-8 flex flex-col justify-end bg-linear-to-t from-black via-transparent to-transparent">
-                    <p className="text-[10px] uppercase tracking-widest text-cyan-400 mb-2 font-bold">{work.category}</p>
+                    {/* <p className="text-[10px] uppercase tracking-widest text-cyan-400 mb-2 font-bold">{work.category}</p> */}
                     <h4 className="text-2xl font-bold tracking-tight">{work.title}</h4>
                   </div>
                 </motion.div>
@@ -135,38 +135,6 @@ export const AboutPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* TRUST FACTORS SECTION */}
-      <section className="py-24 px-6 bg-zinc-950/40 border-b border-zinc-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-black tracking-[-0.04em] uppercase leading-[0.9] mb-6">
-                Why Businesses <br /> <span className="text-cyan-400">Trust Us</span>
-              </h2>
-              <p className="text-zinc-500 text-lg">We bridge the gap between corporate reliability and creative edge.</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {[
-              { icon: Target, title: "Business-Focused Results", desc: "Visuals designed specifically to get you more customers." },
-              { icon: Trophy, title: "Premium Quality", desc: "High standards in lighting, sound, and professional editing." },
-              { icon: Clock, title: "Reliable Timelines", desc: "We stick to our schedules and deliver on or before the deadline." },
-              { icon: CheckCircle2, title: "Market Expertise", desc: "Local Indian expertise with global production standards." }
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-6 items-start group">
-                <div className="p-4 bg-zinc-900 rounded-2xl group-hover:bg-cyan-500/10 transition-colors">
-                  <item.icon className="text-white group-hover:text-cyan-400 transition-colors" size={24} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2 uppercase tracking-tight">{item.title}</h4>
-                  <p className="text-zinc-500 leading-relaxed font-light">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

@@ -3,10 +3,11 @@ import { motion, Variants } from 'framer-motion';
 import { Camera, Video, Scissors, Plane, Cpu, PenTool, LucideIcon, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Navbar } from '../component/Navbar';
 import { ServiceCard } from '../component/ServiceCard';
-import { Contactus } from './Contactus';
-import { AboutPage } from './Aboutpage';
+import { Contactus } from '../component/Contactus';
+import { Ouework } from '../component/Ourwork';
 import { ConstellationBackground } from '../component/ConstellationBackground';
 import remapstudio from '../assets/LOGO/remapStudio.png';
+import { About } from '../component/About';
 
 interface ServiceItem {
   id: string;
@@ -151,8 +152,12 @@ export const Landing: React.FC = () => {
           </div>
         </section>
 
+        <section id="ourwork" className='relative border-t border-zinc-900/50'>
+          <Ouework />
+        </section>
+
         <section id="about" className='relative border-t border-zinc-900/50'>
-          <AboutPage />
+          <About />
         </section>
 
         <section id="contact" className='relative border-t border-zinc-900/50'>
@@ -197,13 +202,16 @@ export const Landing: React.FC = () => {
             <div className="space-y-4">
               <h5 className="text-xs uppercase tracking-widest text-zinc-300 md:pt-0">Social</h5>
               <div className="flex gap-6 text-zinc-500">
-                <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                <a href="https://www.instagram.com/remapstudio?igsh=OGxmbG1jbDBmamM5" target="_blank"
+                  rel="noopener noreferrer" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Instagram size={24} strokeWidth={1.5} />
                 </a>
-                <a href="https://www.linkedin.com/company/remapstudio/" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                <a href="https://www.linkedin.com/company/remapstudio/" target="_blank"
+                  rel="noopener noreferrer" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Linkedin size={24} strokeWidth={1.5} />
                 </a>
-                <a href="https://www.youtube.com/@RemapStudio" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
+                <a href="https://www.youtube.com/@RemapStudio" target="_blank"
+                  rel="noopener noreferrer" className="hover:text-white transition-all duration-300 hover:-translate-y-1">
                   <Youtube size={24} strokeWidth={1.5} />
                 </a>
               </div>
@@ -215,6 +223,17 @@ export const Landing: React.FC = () => {
           <p className="text-xs text-zinc-300 uppercase tracking-[0.2em]">
             © 2026 Remap Studio. All Rights Reserved.
           </p>
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Built with precision by</span>
+            <a
+              href="https://github.com/akashtyagi03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] uppercase tracking-widest text-zinc-400 hover:text-cyan-400 transition-colors font-bold"
+            >
+              Aakash Tyagi ❤️
+            </a>
+          </div>
         </div>
       </footer>
     </div>

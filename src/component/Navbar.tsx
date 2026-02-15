@@ -17,6 +17,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: "Home", hash: "#home" },
     { name: "Services", hash: "#services" },
+    { name : "our work", hash: "#ourwork" },
     { name: "About", hash: "#about" },
   ];
 
@@ -32,13 +33,13 @@ export const Navbar: React.FC = () => {
             }`}>
 
             {/* Logo */}
-            <div className="text-xl font-black tracking-tighter text-white">
+              <a href="#home" className="text-xl font-black tracking-tighter text-white cursor-pointer">
               <img
                 src={RS}
                 alt="Remap Studio Logo"
                 className="h-8 md:h-10 w-auto object-contain"
               />
-            </div>
+            </a>
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-10">

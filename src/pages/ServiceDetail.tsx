@@ -2,13 +2,12 @@ import { useParams, Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, Camera, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Contactus } from './Contactus';
+import { Contactus } from '../component/Contactus';
 import divine from '../assets/divine.jpg';
 import organicmilk from '../assets/organicmilk.jpg';
 import post1 from '../assets/post1.png';
 import post2 from '../assets/post2.png';
 import flyer35e from '../assets/flyer35e.jpg';
-import RealEstateImg from '../assets/RealEstateImg.avif';
 import imgurl from '../assets/imgurl.avif';
 
 const fadeInUp = {
@@ -61,12 +60,11 @@ export const ServiceDetail = () => {
         { title: "Full commercial usage rights", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Corporate Photoshoots", image: imgurl, youtubeId: undefined },
-        { title: "Product Photography", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200", youtubeId: undefined },
-        { title: "Event Documentation", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200", youtubeId: undefined },
-        { title: "Real Estate & Interiors", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200", youtubeId: undefined },
-        { title: "Interviews & Testimonials", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200", youtubeId: undefined },
-        { title: "Business Campaign Shoots", image: RealEstateImg, youtubeId: undefined }
+        { title: "Corporate Photoshoots", type: "image", image: imgurl, youtubeId: undefined },
+        { title: "Product Photography", type: "image", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200", youtubeId: undefined },
+        { title: "Event Documentation", type: "image", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200", youtubeId: undefined },
+        { title: "Real Estate & Interiors", type: "image", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200", youtubeId: undefined },
+        { title: "Interviews & Testimonials", type: "image", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200", youtubeId: undefined },
       ]
     }, {
       id: "commercial-brand-production",
@@ -80,9 +78,9 @@ export const ServiceDetail = () => {
         { title: "Custom thumbnails and graphics", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Bellavita Ad Film", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", youtubeId: "LxDEy-wPVRY?si=tN-fjNNA7sjjBVvQ" },
-        { title: "BlueDe chanel CGI Ad", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", youtubeId: "snNhbkF6nSw?si=ewn1YYddoqydcpDH" },
-        { title: "Motion Graphics & Animated Titles", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
+        { title: "Bellavita Ad Film", type: "video", image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop", youtubeId: "LxDEy-wPVRY?si=tN-fjNNA7sjjBVvQ" },
+        { title: "BlueDe chanel CGI Ad", type: "video", image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop", youtubeId: "snNhbkF6nSw?si=ewn1YYddoqydcpDH" },
+        { title: "Motion Graphics & Animated Titles", type: "image", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
       ]
     }, {
       id: "editing-post-production",
@@ -95,9 +93,9 @@ export const ServiceDetail = () => {
         { title: "Final cut ready for distribution", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Cinematic Editing & Story Pacing", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop", youtubeId: undefined },
-        { title: "Color Grading & Film Looks", image: imgurl, youtubeId: undefined },
-        { title: "Audio Cleanup & Sound Design", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
+        { title: "Cinematic Editing & Story Pacing", type: "image", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop", youtubeId: undefined },
+        { title: "Color Grading & Film Looks", type: "image", image: imgurl, youtubeId: undefined },
+        { title: "Audio Cleanup & Sound Design", type: "image", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800&auto=format&fit=crop", youtubeId: undefined }
       ]
     }, {
       id: "drone-photography-videography",
@@ -111,9 +109,9 @@ export const ServiceDetail = () => {
         { title: "Compliance with aviation regulations", image: "https://images.unsplash.com/photo-1521747116042-5a810fda9664?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Above the World Cinematic Travel Visuals", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop", youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo" },
-        { title: "Construction Site Progress Monitoring – Visual Documentation", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop", youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5", },
-        { title: "Real Estate Aerial Showcase Drone Cinematography", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H" },
+        { title: "Above the World Cinematic Travel Visuals", type: "video", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop", youtubeId: "igPWHsJpVaw?si=eC4KWWrO9HQAhSBo" },
+        { title: "Construction Site Progress Monitoring – Visual Documentation", type: "video", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop", youtubeId: "0KJmMEetS5U?si=2ZR7igm8G-4E3SK5", },
+        { title: "Real Estate Aerial Showcase Drone Cinematography", type: "video", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", youtubeId: "LGZ8YFd-uGI?si=F3V_87WYwwDhta6H" },
       ]
     }, {
       id: "ai-powered-video-ugc-content",
@@ -127,13 +125,13 @@ export const ServiceDetail = () => {
         { title: "Performance analytics reports", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" }
       ],
       Specializations: [
-        { title: "AI Powered Hair Story", image: imgurl, youtubeId: "93mY8Bl3qBs?si=250RdtdzsnqNWyBA" },
-        { title: "AI Powered Skin Story", image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop", youtubeId: "3HxlK3ZLvdQ?si=bIKHUkpFkDDaMEr-" },
-        { title: "Aloe Glow — Reimagined by AI", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop", youtubeId: "zl3LUjZL2HA?si=-_PuIIYC5F3zjH5_" },
-        { title: "Designed in the Future", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=800&auto=format&fit=crop", youtubeId: "SP0uqnChCqQ?si=5f0uzzRl2Lb29Uot" },
-        { title: "Fruit Glow — Reimagined by AI", image: "https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop", youtubeId: "tyvopmAo0Ck?si=_SstCevrPCgtIPTE" },
-        { title: "Future of Skincare Ads", image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop", youtubeId: "Tq-v3pZ2-eI?si=XFG5B42tGPIzMR1R" },
-        { title: "Glow the Cocoa Way", image: "https://images.unsplash.com/photo-1608248547160-fbc763c01567?q=80&w=800&auto=format&fit=crop", youtubeId: "ZJ8QqDBXYCo?si=w0lrRujhoeiwmEQs" }
+        { title: "AI Powered Hair Story", type: "reel", image: imgurl, youtubeId: "93mY8Bl3qBs?si=250RdtdzsnqNWyBA" },
+        { title: "AI Powered Skin Story", type: "reel", image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop", youtubeId: "3HxlK3ZLvdQ?si=bIKHUkpFkDDaMEr-" },
+        { title: "Aloe Glow — Reimagined by AI", type: "reel", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop", youtubeId: "zl3LUjZL2HA?si=-_PuIIYC5F3zjH5_" },
+        { title: "Designed in the Future", type: "reel", image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=800&auto=format&fit=crop", youtubeId: "SP0uqnChCqQ?si=5f0uzzRl2Lb29Uot" },
+        { title: "Fruit Glow — Reimagined by AI", type: "reel", image: "https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop", youtubeId: "tyvopmAo0Ck?si=_SstCevrPCgtIPTE" },
+        { title: "Future of Skincare Ads", type: "reel", image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800&auto=format&fit=crop", youtubeId: "Tq-v3pZ2-eI?si=XFG5B42tGPIzMR1R" },
+        { title: "Glow the Cocoa Way", type: "reel", image: "https://images.unsplash.com/photo-1608248547160-fbc763c01567?q=80&w=800&auto=format&fit=crop", youtubeId: "ZJ8QqDBXYCo?si=w0lrRujhoeiwmEQs" }
       ]
     }, {
       id: "graphic-design-creative-branding",
@@ -146,11 +144,11 @@ export const ServiceDetail = () => {
         { title: "Comprehensive brand style guide", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800" }
       ],
       Specializations: [
-        { title: "Social Media Post & Ad Creatives", image: organicmilk, youtubeId: undefined },
-        { title: "Posters, Flyers & Event Promotions", image: flyer35e, youtubeId: undefined },
-        { title: "Business Cards & Corporate Stationery", image: divine, youtubeId: undefined },
-        { title: "Pitch Deck & Company Profile Design", image: post1, youtubeId: undefined },
-        { title: "Thumbnails & YouTube Creative Design", image: post2, youtubeId: undefined }
+        { title: "Social Media Post & Ad Creatives", type: "image", image: organicmilk, youtubeId: undefined },
+        { title: "Posters, Flyers & Event Promotions", type: "image", image: flyer35e, youtubeId: undefined },
+        { title: "Business Cards & Corporate Stationery", type: "image", image: divine, youtubeId: undefined },
+        { title: "Pitch Deck & Company Profile Design", type: "image", image: post1, youtubeId: undefined },
+        { title: "Thumbnails & YouTube Creative Design", type: "image", image: post2, youtubeId: undefined }
       ]
     }]
   const service = services.find(s => s.id === id);
@@ -196,36 +194,60 @@ export const ServiceDetail = () => {
       </section>
 
       {/* PORTFOLIO SECTION */}
-      <section className="py-10 px-4 md:px-8 mx-0 md:mx-6 bg-zinc-950/50 rounded-none md:rounded-[3.5rem] border-y md:border border-zinc-900/50">
+      <section className="py-20 px-4 md:px-8 mx-0 md:mx-6 bg-zinc-950/50 rounded-none md:rounded-[3.5rem] border-y md:border border-zinc-900/50">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col mb-12 gap-4">
+          <div className="mb-12">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tight">Our Portfolio</h2>
           </div>
 
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
+          {/* CHANGED: From columns-3 to a flexible grid with auto-rows */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
             {service.Specializations?.map((item, i) => {
-              // Define the image source logic HERE, before the return
+              const thumbId = item.youtubeId?.split('?')[0];
               const displayImage = item.youtubeId
-                ? `https://img.youtube.com/vi/${item.youtubeId.split('?')[0]}/maxresdefault.jpg`
+                ? `https://img.youtube.com/vi/${thumbId}/maxresdefault.jpg`
                 : item.image;
+
+              // LAYOUT LOGIC
+              let aspectClass = "aspect-[4/3]"; // Default Image
+              let spanClass = "col-span-1";
+
+              if (item.type === 'video') {
+                aspectClass = "aspect-video"; // 16:9
+                spanClass = "md:col-span-2 lg:col-span-2"; // Videos take more horizontal space
+              } else if (item.type === 'reel') {
+                aspectClass = "aspect-[9/16]"; // Portrait
+                spanClass = "col-span-1 row-span-2"; // Reels take vertical space
+              }
 
               return (
                 <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   onClick={() => setSelectedWorkIndex(i)}
-                  className="relative break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer bg-zinc-900 border border-zinc-800/50 transition-all hover:scale-[1.02] z-10"
+                  className={`relative rounded-3xl overflow-hidden group cursor-pointer bg-zinc-900 border border-zinc-800/50 transition-all hover:scale-[1.01] z-10 ${aspectClass} ${spanClass}`}
                 >
-                  <div className="relative aspect-video sm:aspect-auto">
-                    <img
-                      src={displayImage} // 
-                      alt={item.title}
-                      className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                    />
-                    {item.youtubeId && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="text-white opacity-50 group-hover:opacity-100 transition-opacity" size={48} />
+                  <img
+                    src={displayImage}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  />
+
+                  {/* Play Overlay for Videos and Reels */}
+                  {item.youtubeId && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/0 transition-colors">
+                      <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20">
+                        <Play className="text-white fill-white" size={item.type === 'reel' ? 24 : 40} />
                       </div>
-                    )}
+                    </div>
+                  )}
+
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="text-[10px] uppercase tracking-widest text-cyan-400 font-bold mb-1">{item.type || 'Showcase'}</p>
+                    <h4 className="text-lg font-bold leading-tight">{item.title}</h4>
                   </div>
                 </motion.div>
               );
@@ -347,6 +369,34 @@ export const ServiceDetail = () => {
       <section id="contact" className="mt-10 border-t border-zinc-900">
         <Contactus />
       </section>
+
+      <footer className="py-10 border-t border-zinc-900 bg-black">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+          {/* Greeting */}
+          <div className="text-center md:text-left">
+            <p className="text-zinc-500 text-sm font-light">
+              Thank you for visiting <span className="text-cyan-400">Remap Studio</span>. <br className="md:hidden" />
+              We look forward to bringing your vision to life.
+            </p>
+          </div>
+
+          {/* Developer Credit */}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Built with precision by</span>
+            <a
+              href="https://github.com/akashtyagi03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] uppercase tracking-widest text-zinc-400 hover:text-cyan-400 transition-colors font-bold"
+            >
+              Aakash Tyagi ❤️
+            </a>
+          </div>
+
+        </div>
+      </footer>
     </div>
+
   );
 };
