@@ -209,15 +209,15 @@ export const ServiceDetail = () => {
                 : item.image;
 
               // LAYOUT LOGIC
-              let aspectClass = "aspect-[4/3]"; // Default Image
+              let aspectClass = "aspect-[4/3]"; 
               let spanClass = "col-span-1";
 
               if (item.type === 'video') {
-                aspectClass = "aspect-video"; // 16:9
-                spanClass = "md:col-span-2 lg:col-span-2"; // Videos take more horizontal space
+                aspectClass = "aspect-video"; 
+                spanClass = "md:col-span-1 lg:col-span-1"; 
               } else if (item.type === 'reel') {
                 aspectClass = "aspect-[9/16]"; // Portrait
-                spanClass = "col-span-1 row-span-2"; // Reels take vertical space
+                spanClass = "col-span-1 row-span-1"; // Reels take vertical space
               }
 
               return (
